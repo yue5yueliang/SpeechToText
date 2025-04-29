@@ -22,7 +22,7 @@ pod 'SpeechToText'
 
 ## Author
 
-WangXL, 1162559647@qq.com
+桃色三岁, 136769890@qq.com
 
 ## License
 
