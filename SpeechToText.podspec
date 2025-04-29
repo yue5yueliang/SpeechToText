@@ -13,9 +13,12 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/yue5yueliang/SpeechToText.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.0'
-  s.source_files = 'SpeechToText/Classes/**/*'
 
-  s.vendored_frameworks = 'SpeechToText/iflyMSC.framework'  # ✅ 加入这个！
+  # ✅ 如果 Classes 中还有其他代码文件，保留 source_files，否则可以删掉
+  s.source_files = 'SpeechToText/Classes/**/*.{h,m}'  
+
+  # ✅ Framework 路径修正为正确的相对路径（从 podspec 出发）
+  s.vendored_frameworks = 'SpeechToText/Classes/iflyMSC.framework'
 
   s.frameworks = %w[
     UIKit
@@ -31,7 +34,10 @@ Pod::Spec.new do |s|
     CoreGraphics
   ]
 
-  s.libraries = 'c++', 'z'  # ✅ iFly 需要这两个静态库
+  # ✅ iFlySpeech SDK 必需依赖
+  s.libraries = 'c++', 'z'
+
+  # ✅ iFlySpeech SDK 必需配置
   s.xcconfig = {
     'OTHER_LDFLAGS' => '-ObjC'
   }
