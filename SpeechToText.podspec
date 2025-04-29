@@ -36,8 +36,12 @@ Pod::Spec.new do |s|
     'OTHER_LDFLAGS' => '-ObjC'
   }
 
-  # ✅ 添加此项，避免模拟器编译失败（尤其在 Apple Silicon 上）
+  # ✅ 防止在 Apple Silicon 模拟器中因架构不兼容导致验证失败
   s.pod_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+
+  s.user_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
 end
