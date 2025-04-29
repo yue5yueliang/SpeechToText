@@ -7,10 +7,10 @@ Pod::Spec.new do |s|
     仅用于通过 CocoaPods 方便集成使用，最低支持 iOS 13。
     DESC
 
-  s.homepage         = 'https://github.com/WangXL/SpeechToText'
+  s.homepage         = 'https://github.com/yue5yueliang/SpeechToText'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'WangXL' => '1162559647@qq.com' }
-  s.source           = { :git => 'https://github.com/WangXL/SpeechToText.git', :tag => s.version.to_s }
+  s.author           = { '桃色三岁' => '136769890@qq.com' }
+  s.source           = { :git => 'https://github.com/yue5yueliang/SpeechToText.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.0'
   s.source_files = 'SpeechToText/Classes/**/*'
